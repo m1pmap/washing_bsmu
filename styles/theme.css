@@ -1,0 +1,31 @@
+/*Фон*/
+html.tg-theme-light body {
+  background: #EFEEF4;
+}
+html.tg-theme-dark body {
+  background: black;
+}
+
+html.tg-theme-light h1,
+html.tg-theme-light h2 {
+  color: #4B4B4B;
+}
+html.tg-theme-dark h1,
+html.tg-theme-dark h2 {
+  color: #4B4B4B;
+}
+
+html.tg-theme-light button {
+  background: white;
+  color: #4B4B4B;
+}
+html.tg-theme-dark button {
+  background: white;
+}
+
+html.tg-theme-light .user-info {
+  color: #4B4B4B;
+}
+html.tg-theme-dark .user-info {
+  color: #4B4B4B;
+}

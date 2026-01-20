@@ -2,36 +2,43 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Мой бесплатный сайт</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/theme.css">
 </head>
 <body>
-    <header>
-        <h1>Привет, мир! 🌍</h1>
-        <p>Мой сайт на GitHub Pages</p>
-    </header>
+   
+   <div class="top-container">
+        <h1>Washing BSMU</h1>
+
+        <div class="buttons-container">
+            <button class="worktime-button">Время работы</button>
+            <div class="user-info">
+                <p>Нет записи</p>
+                <button class="user-button">
+                    <img id="user-avatar" alt="User avatar">
+                </button>
+            </div>
+        </div>
+    </div>  
+
+    <div class="carousel-container">
+        <div class="date-carousel" id="carousel">
+            <div class="date-track" id="dateTrack"></div>
+        </div>
+    </div>
+
+    <div class="time-container">
+        <h2>Выбор времени</h2>
+    </div>
+   
     
-    <main>
-        <section id="app">
-            <h2>Счетчик: <span id="counter">0</span></h2>
-            <button onclick="increment()">+1</button>
-            <button onclick="reset()">Сбросить</button>
-        </section>
-        
-        <section>
-            <h3>Заметки</h3>
-            <div id="notes"></div>
-            <input type="text" id="newNote" placeholder="Новая заметка...">
-            <button onclick="addNote()">Добавить</button>
-        </section>
-    </main>
-    
-    <footer>
-        <p>© 2024 Мой сайт. Хостится бесплатно на GitHub Pages</p>
-    </footer>
-    
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/daysCarousel.js"></script>
+    <script src="scripts/theme.js"></script>
 </body>
 </html>
