@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             ignoreScroll = false;
         }, 200); // 200 мс должно хватить для плавного скролла
+
     }
 
     // генерация дней
@@ -44,7 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const date = new Date(today);
         date.setDate(today.getDate() + offset);
 
-        const disabled = isDisabled(offset);
+        const dayOfWeek = date.getDay(); // 0 - Вс, 6 - Сб
+        const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+
+        const disabled = isDisabled(offset) || isWeekend;
 
         const item = document.createElement('div');
         item.className = 'date-item';
@@ -53,10 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (disabled) item.classList.add('disabled');
 
         item.innerHTML = `
-            <div class="statusDot"></div>
             <span class="num">${String(date.getDate()).padStart(2, '0')}</span>
             <span class="day">${daysRu[date.getDay()]}</span>
-            <div class="dot"></div>
         `;
 
         item.addEventListener('click', () => setActive(item));
@@ -72,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // свайп → выбираем ближайший допустимый
+    let scrollTimeout;
+
     carousel.addEventListener('scroll', () => {
         if (ignoreScroll) return; // игнорируем если скролл вызван кликом
 
@@ -93,8 +97,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (closest) {
+            // выделяем ближайший элемент во время скролла
             items.forEach(i => i.classList.remove('active'));
             closest.classList.add('active');
         }
+
+        // запускаем debounce на рендер
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            // renderSlots вызывается только после окончания скролла
+            renderSlots();
+        }, 75); // 150 мс после последнего движения скролла
     });
 });
