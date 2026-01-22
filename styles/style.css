@@ -19,6 +19,7 @@
 
 .worktime-button {
     margin: 0;
+    border: none;
 }
 
 .user-info{
@@ -59,10 +60,9 @@
 }
 
 
-
 .carousel-container{
     margin-top: -20px;
-    background: #5F92A1;
+    background: #456973;
     z-index: 1;
     display: flex;
     align-items: center;
@@ -124,6 +124,12 @@
     pointer-events: none;
 }
 
+
+
+
+
+
+
 .time-container{
     margin-top: -30px;
     background: #EFEEF4;
@@ -133,11 +139,6 @@
     border-top: 1px solid gray;
     position: relative;
 }
-
-
-
-
-
 
 .slots {
     display: flex;
@@ -193,6 +194,10 @@
     border-color: #ddd;
 }
 
+.slot.active {
+    border: 2px solid #90bfab;
+}
+
 
 
 .time {
@@ -204,4 +209,149 @@
 .places {
     font-size: 13px;
     color: #888;
+}
+
+
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1000;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sheet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    border-radius: 20px 20px 0 0;
+    padding: 16px;
+    z-index: 1001;
+
+    transform: translateY(100%);
+    transition: transform 0.35s ease;
+}
+
+.sheet.show {
+    transform: translateY(0);
+}
+
+
+.sheet-handle {
+    width: 40px;
+    height: 4px;
+    background: #fff;
+    opacity: 0.2;
+    border-radius: 4px;
+    margin: 0 auto 20px;
+}
+
+.people {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-bottom: 4px;
+    background: #f3f3f3;
+    color: #333;
+    font-size: 14px;
+}
+
+.person-btn {
+    border: none;
+    background: none;
+    font-size: 25px;
+    border-radius: 10px;
+    width: 25px;
+    height: 25px;
+    color: #90bfab;
+    cursor: pointer;
+}
+
+.person-btn::before {
+    content: '›';
+    font-size: 25px;;
+    position: relative;
+    top: -14px;        
+    left: -2px;  
+}
+
+
+.sheet-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    background: #24ad74;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* запись */
+.sheet-btn.confirm {
+    background: #24ad74; /* зелёный */
+    color: white;
+}
+
+/* отмена */
+.sheet-btn.cancel {
+    background: #fe3a5d; /* красный */
+    color: white;
+}
+
+.sheet-btn.disabled {
+    background: #f3f3f3; /* красный */
+    color: #4B4B4B;
+}
+
+
+
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, 20px);
+    background: #2f2f2f;
+    color: #fff;
+    padding: 12px 12px;
+    border-radius: 14px;
+    font-size: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    z-index: 2000;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.toast.success {
+    background: mediumseagreen;
+}
+
+.toast.cancel {
+    background: #fe3a5d;
 }

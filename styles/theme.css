@@ -3,7 +3,7 @@ html.tg-theme-light body {
   background: #EFEEF4;
 }
 html.tg-theme-dark body {
-  background: black;
+  background: #1c1c1c;
 }
 
 html.tg-theme-light h1,
@@ -20,7 +20,8 @@ html.tg-theme-light button {
   color: #4B4B4B;
 }
 html.tg-theme-dark button {
-  background: white;
+  background: #2c2c2e;
+  color: #949191;
 }
 
 html.tg-theme-light .user-info {
@@ -28,4 +29,107 @@ html.tg-theme-light .user-info {
 }
 html.tg-theme-dark .user-info {
   color: #4B4B4B;
+}
+
+
+html.tg-theme-light .top-container {
+  background: #EFEEF4;
+}
+html.tg-theme-dark .top-container {
+  background: #1c1c1c;
+}
+
+html.tg-theme-light .time-container {
+  background: #EFEEF4;
+}
+html.tg-theme-dark .time-container {
+  background: #1c1c1c;
+  border-top: 1px solid transparent;;
+}
+
+html.tg-theme-light .user-info {
+  background: white;
+  color: #4B4B4B;
+}
+html.tg-theme-dark .user-info {
+  background: #2c2c2e;
+  color: #949191;
+}
+
+html.tg-theme-light .slot {
+  background: white;
+  color: #4B4B4B;
+}
+html.tg-theme-dark .slot {
+  background: #2c2c2e;
+  color: #949191;
+}
+
+html.tg-theme-light .carousel-container {
+  background: #5F92A1;
+  color: #4B4B4B;
+}
+html.tg-theme-dark .carousel-container {
+  background: #456973;
+  color: #949191;
+}
+
+html.tg-theme-light .date-item {
+  background: #fff;
+}
+html.tg-theme-dark .date-item {
+  background: #2c2c2e;
+}
+
+html.tg-theme-light .date-item.active {
+  background: #FE3A5D;
+}
+html.tg-theme-dark .date-item.active {
+  background: #5f92a1;
+}
+
+html.tg-theme-light .slot.active {
+  border: 2px solid #90bfab;
+}
+html.tg-theme-dark .slot.active {
+  border: 2px solid #5f92a1;
+}
+
+html.tg-theme-light .sheet {
+  background: #fff;
+}
+html.tg-theme-dark .sheet {
+  background: #1c1c1c;
+}
+
+html.tg-theme-light .sheet-handle {
+  background: black;
+}
+html.tg-theme-dark .sheet-handle {
+  background: white;
+}
+
+html.tg-theme-light #sheet-time {
+  color: #4B4B4B;
+}
+html.tg-theme-dark #sheet-time {
+  color: #807e7e;
+}
+
+html.tg-theme-light .person {
+  background: #f3f3f3;
+  color: #333;
+}
+html.tg-theme-dark .person {
+  background: #2c2c2e;
+  color: #949191;
+}
+
+html.tg-theme-light .sheet-btn.disabled {
+  background: #f3f3f3; 
+    color: #4B4B4B;
+}
+html.tg-theme-dark .sheet-btn.disabled {
+  background: #2c2c2e;
+  color: #949191;
 }
